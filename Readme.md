@@ -11,6 +11,27 @@
 - [x] **Persistência de dados com SQLite**
 - [x] **Interface gráfica simples com Tkinter**
 
+## Estrutura do Projeto
+```
+gerenciador_tarefas/
+│
+├── main.py                      # Ponto de entrada da aplicação
+│
+├── controller/
+│   └── tarefa_controller.py     # Controla a lógica entre UI e banco
+│
+├── model/
+│   └── tarefa_model.py          # Classe Tarefa e lógica de banco SQLite
+│
+├── view/
+│   └── tarefa_view.py           # Interface gráfica (Tkinter)
+│
+└── database/
+    └── conexao.py               # Gerencia conexão com banco de dados
+
+
+```
+
 
 ## Tecnologias Utilizadas
 
