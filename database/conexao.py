@@ -1,7 +1,7 @@
 import sqlite3
 
 def conectar():
-    return sqlite3.connect("tarefa.db")
+    return sqlite3.connect("tarefas.db")
 
 def inicializar_banco():
     conn = conectar()
@@ -14,4 +14,4 @@ def inicializar_banco():
         )
     """)
     conn.commit()
-    conn.close()    
+    conn.close()
