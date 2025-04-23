@@ -3,7 +3,7 @@ import model.tarefa_model as model
 def adicionar_tarefa(descricao):
     model.criar(descricao)
 
-def lista_tarefas():
+def listar_tarefas():
     return model.listar()
 
 def marcar_concluida(id):
