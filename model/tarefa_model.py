@@ -1,14 +1,14 @@
 from database.conexao import conectar
 
 class Tarefa:
-    def __init__(self, id, descricao, concluida=False):
+    def __init__(self, id, descricao, concluida):
         self.id = id
         self.descricao = descricao
-        self.concluida = concluida
+        self.concluida = bool(concluida)  # garantir que é booleano
 
-        def __str__(self):
-            status = "Concluída" if self.concluida else "Pendente"
-            return f"{self.id} - {self.descricao} [{status}]"
+    def __str__(self):
+        status = "Concluída" if self.concluida else "Pendente"
+        return f"[{self.id}] {self.descricao} - {status}"
         
 def criar(descricao):
     conn = conectar()
@@ -20,7 +20,7 @@ def criar(descricao):
 def listar():
     conn = conectar()
     cursor = conn.cursor()
-    cursor.execute("SELECT id, decricao, concluida FROM tarefas")
+    cursor.execute("SELECT id, descricao, concluida FROM tarefas")
     tarefas = [Tarefa(*row) for row in cursor.fetchall()] 
     conn.close()
     return tarefas
