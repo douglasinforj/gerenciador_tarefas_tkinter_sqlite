@@ -8,11 +8,10 @@ def inicializar_banco():
     cursor = conn.cursor()
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS tarefas (
-                   id INTEGER PRIMARY KEY AUTOINCREMENT,
-                   descricao TEXT NOT NULL,
-                   concluida INTEGER DEFAUL 0 
-                   )
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            descricao TEXT NOT NULL,
+            concluida INTEGER DEFAULT 0
+        )
     """)
-
     conn.commit()
     conn.close()    
